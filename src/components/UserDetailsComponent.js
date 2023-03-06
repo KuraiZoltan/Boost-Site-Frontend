@@ -15,6 +15,14 @@ export function UserDetailsComponent(selectRankFrom, dropdownOptionFromState, se
             LastName: lastName,
             Email: email
         }
+
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        }
+        console.log(payload)
+        await fetch(`https://localhost:7196/api/Email`, requestOptions)
     }
 
     const handleFirstNameOnChange = event => {
